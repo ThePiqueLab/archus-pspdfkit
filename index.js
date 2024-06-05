@@ -66,7 +66,9 @@ class PSPDFKitView extends React.Component {
           onNavigationButtonClicked={this._onNavigationButtonClicked}
           onDataReturned={this._onDataReturned}
           onCustomToolbarButtonTapped={this._onCustomToolbarButtonTapped}
-          onCustomAnnotationContextualMenuItemTapped={this._onCustomAnnotationContextualMenuItemTapped}
+          onCustomAnnotationContextualMenuItemTapped={
+            this._onCustomAnnotationContextualMenuItemTapped
+          }
         />
       );
     } else {
@@ -173,10 +175,10 @@ class PSPDFKitView extends React.Component {
    * @ignore
    */
   _onCustomAnnotationContextualMenuItemTapped = event => {
-      if (this.props.onCustomAnnotationContextualMenuItemTapped) {
-        this.props.onCustomAnnotationContextualMenuItemTapped(event.nativeEvent);
-      }
-    };
+    if (this.props.onCustomAnnotationContextualMenuItemTapped) {
+      this.props.onCustomAnnotationContextualMenuItemTapped(event.nativeEvent);
+    }
+  };
 
   /**
    * Enters annotation creation mode, showing the annotation creation toolbar.
@@ -537,7 +539,8 @@ class PSPDFKitView extends React.Component {
 
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.refs.pdfView),
-        this._getViewManagerConfig('RCTPSPDFKitView').Commands.setAnnotationFlags,
+        this._getViewManagerConfig('RCTPSPDFKitView').Commands
+          .setAnnotationFlags,
         [requestId, uuid, flags],
       );
 
@@ -574,7 +577,8 @@ class PSPDFKitView extends React.Component {
 
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.refs.pdfView),
-        this._getViewManagerConfig('RCTPSPDFKitView').Commands.getAnnotationFlags,
+        this._getViewManagerConfig('RCTPSPDFKitView').Commands
+          .getAnnotationFlags,
         [requestId, uuid],
       );
 
@@ -870,21 +874,20 @@ class PSPDFKitView extends React.Component {
    *	this.pdfRef.current.setToolbar(toolbar);
    *
    */
-    setToolbar = function (toolbar) {
-      if (Platform.OS === 'ios') {
-        NativeModules.PSPDFKitViewManager.setToolbar(
-          toolbar,
-          findNodeHandle(this.refs.pdfView),
-        );
-      } else if (Platform.OS === 'android') {
-        UIManager.dispatchViewManagerCommand(
-          findNodeHandle(this.refs.pdfView),
-          this._getViewManagerConfig('RCTPSPDFKitView').Commands
-          .setToolbar,
-          [toolbar],
-        );
-      }
-    };
+  setToolbar = function (toolbar) {
+    if (Platform.OS === 'ios') {
+      NativeModules.PSPDFKitViewManager.setToolbar(
+        toolbar,
+        findNodeHandle(this.refs.pdfView),
+      );
+    } else if (Platform.OS === 'android') {
+      UIManager.dispatchViewManagerCommand(
+        findNodeHandle(this.refs.pdfView),
+        this._getViewManagerConfig('RCTPSPDFKitView').Commands.setToolbar,
+        [toolbar],
+      );
+    }
+  };
 
   /**
    * Gets the toolbar for the specified view mode.
@@ -898,14 +901,14 @@ class PSPDFKitView extends React.Component {
    * const toolbar = await this.pdfRef.current.getToolbar('document');
    *
    */
-    getToolbar = function (viewMode) {
-      if (Platform.OS === 'ios') {
-        return NativeModules.PSPDFKitViewManager.getToolbar(
-          viewMode,
-          findNodeHandle(this.refs.pdfView),
-        );
-      }
-    };
+  getToolbar = function (viewMode) {
+    if (Platform.OS === 'ios') {
+      return NativeModules.PSPDFKitViewManager.getToolbar(
+        viewMode,
+        findNodeHandle(this.refs.pdfView),
+      );
+    }
+  };
 
   /**
    * Sets the measurement value configurations for the ```PSPDFKitView```.
@@ -920,13 +923,13 @@ class PSPDFKitView extends React.Component {
    *    unitTo: Measurements.ScaleUnitTo.INCH,
    *    valueTo: 2.54
    *  };
-   *  
+   *
    *  const measurementValueConfig: MeasurementValueConfiguration = {
    *    name: 'Custom Scale',
    *    scale: scale,
    *    precision: Measurements.Precision.FOUR_DP
    *  };
-   *  
+   *
    *  const configs = [measurementValueConfig];
    *  await this.pdfRef.current?.setMeasurementValueConfigurations(configs);
    */
@@ -942,9 +945,8 @@ class PSPDFKitView extends React.Component {
 
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.refs.pdfView),
-        this._getViewManagerConfig(
-          'RCTPSPDFKitView',
-        ).Commands.setMeasurementValueConfigurations,
+        this._getViewManagerConfig('RCTPSPDFKitView').Commands
+          .setMeasurementValueConfigurations,
         [requestId, configurations],
       );
 
@@ -985,14 +987,13 @@ class PSPDFKitView extends React.Component {
       );
 
       return promise;
-    }
-    else if (Platform.OS === 'ios') {
+    } else if (Platform.OS === 'ios') {
       return NativeModules.PSPDFKitViewManager.getMeasurementValueConfigurations(
         findNodeHandle(this.refs.pdfView),
       );
     }
   };
-  
+
   /**
    * Customizes the visible toolbar menu items for Android.
    *
@@ -1037,14 +1038,12 @@ class PSPDFKitView extends React.Component {
 
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.refs.pdfView),
-        this._getViewManagerConfig('RCTPSPDFKitView').Commands
-          .getConfiguration,
+        this._getViewManagerConfig('RCTPSPDFKitView').Commands.getConfiguration,
         [requestId],
       );
 
       return promise;
-    }
-    else if (Platform.OS === 'ios') {
+    } else if (Platform.OS === 'ios') {
       return NativeModules.PSPDFKitViewManager.getConfiguration(
         findNodeHandle(this.refs.pdfView),
       );
@@ -1911,29 +1910,29 @@ export class Processor {
   getTemporaryDirectory = function () {};
 }
 
-import { PDFConfiguration } from "./lib/configuration/PDFConfiguration";
-export { PDFConfiguration } from "./lib/configuration/PDFConfiguration";
+import { PDFConfiguration } from './lib/configuration/PDFConfiguration';
+export { PDFConfiguration } from './lib/configuration/PDFConfiguration';
 
-import { Toolbar } from "./lib/toolbar/Toolbar";
-export { Toolbar } from "./lib/toolbar/Toolbar";
+import { Toolbar } from './lib/toolbar/Toolbar';
+export { Toolbar } from './lib/toolbar/Toolbar';
 
-import { Measurements } from "./lib/measurements/Measurements";
-export { Measurements } from "./lib/measurements/Measurements";
+import { Measurements } from './lib/measurements/Measurements';
+export { Measurements } from './lib/measurements/Measurements';
 
-import { MeasurementScale } from "./lib/measurements/Measurements";
-export { MeasurementScale } from "./lib/measurements/Measurements";
+import { MeasurementScale } from './lib/measurements/Measurements';
+export { MeasurementScale } from './lib/measurements/Measurements';
 
-import { MeasurementValueConfiguration } from "./lib/measurements/Measurements";
-export { MeasurementValueConfiguration } from "./lib/measurements/Measurements";
+import { MeasurementValueConfiguration } from './lib/measurements/Measurements';
+export { MeasurementValueConfiguration } from './lib/measurements/Measurements';
 
-import { Annotation } from "./lib/annotations/Annotation";
-export { Annotation } from "./lib/annotations/Annotation";
+import { Annotation } from './lib/annotations/Annotation';
+export { Annotation } from './lib/annotations/Annotation';
 
-import { AnnotationContextualMenu } from "./lib/annotations/Annotation";
-export { AnnotationContextualMenu } from "./lib/annotations/Annotation";
+import { AnnotationContextualMenu } from './lib/annotations/Annotation';
+export { AnnotationContextualMenu } from './lib/annotations/Annotation';
 
-import { AnnotationContextualMenuItem } from "./lib/annotations/Annotation";
-export { AnnotationContextualMenuItem } from "./lib/annotations/Annotation";
+import { AnnotationContextualMenuItem } from './lib/annotations/Annotation';
+export { AnnotationContextualMenuItem } from './lib/annotations/Annotation';
 
 module.exports.PDFConfiguration = PDFConfiguration;
 module.exports.Toolbar = Toolbar;

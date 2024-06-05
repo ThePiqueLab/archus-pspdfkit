@@ -95,666 +95,672 @@ import { MeasurementValueConfiguration } from './../measurements/Measurements';
  */
 
 export class PDFConfiguration {
+  // Document Interaction Options
+  scrollDirection?: PDFConfiguration.ScrollDirection;
+  pageTransition?: PDFConfiguration.PageTransition;
+  documentPassword?: string;
+  enableTextSelection?: PDFConfiguration.BooleanType;
+  autosaveEnabled?: PDFConfiguration.BooleanType;
+  disableAutomaticSaving?: PDFConfiguration.BooleanType;
+  signatureSavingStrategy?: PDFConfiguration.SignatureSavingStrategy;
+  iOSShouldScrollToChangedPage?: PDFConfiguration.BooleanType;
+  iOSFormElementZoomEnabled?: PDFConfiguration.BooleanType;
+  iOSImageSelectionEnabled?: PDFConfiguration.BooleanType;
+  iOSTextSelectionShouldSnapToWord?: PDFConfiguration.BooleanType;
+  iOSFreeTextAccessoryViewEnabled?: PDFConfiguration.BooleanType;
+  iOSInternalTapGesturesEnabled?: PDFConfiguration.BooleanType;
+  iOSAllowBackgroundSaving?: PDFConfiguration.BooleanType;
+  iOSMinimumZoomScale?: number;
+  iOSMaximumZoomScale?: number;
+  iOSDoubleTapAction?: PDFConfiguration.IOSDoubleTapAction;
+  iOSTypesShowingColorPresets?: AnyCase<PDFConfiguration.IOSTypesShowingColorPresets>[];
 
-    // Document Interaction Options
-    scrollDirection?: PDFConfiguration.ScrollDirection;
-    pageTransition?: PDFConfiguration.PageTransition;
-    documentPassword?: string;
-    enableTextSelection?: PDFConfiguration.BooleanType;
-    autosaveEnabled?: PDFConfiguration.BooleanType;
-    disableAutomaticSaving?: PDFConfiguration.BooleanType;
-    signatureSavingStrategy?: PDFConfiguration.SignatureSavingStrategy;
-    iOSShouldScrollToChangedPage?: PDFConfiguration.BooleanType;
-    iOSFormElementZoomEnabled?: PDFConfiguration.BooleanType;
-    iOSImageSelectionEnabled?: PDFConfiguration.BooleanType;
-    iOSTextSelectionShouldSnapToWord?: PDFConfiguration.BooleanType;
-    iOSFreeTextAccessoryViewEnabled?: PDFConfiguration.BooleanType;
-    iOSInternalTapGesturesEnabled?: PDFConfiguration.BooleanType;
-    iOSAllowBackgroundSaving?: PDFConfiguration.BooleanType;
-    iOSMinimumZoomScale?: number;
-    iOSMaximumZoomScale?: number;
-    iOSDoubleTapAction?: PDFConfiguration.IOSDoubleTapAction;
-    iOSTypesShowingColorPresets?: AnyCase<PDFConfiguration.IOSTypesShowingColorPresets>[];
-    
-    // Document Presentation Options
-    pageMode?: PDFConfiguration.PageMode;
-    firstPageAlwaysSingle?: PDFConfiguration.BooleanType;
-    showPageLabels?: PDFConfiguration.BooleanType;
-    documentLabelEnabled?: PDFConfiguration.BooleanType;
-    spreadFitting?: PDFConfiguration.SpreadFitting;
-    invertColors?: PDFConfiguration.BooleanType;
-    androidGrayScale?: PDFConfiguration.BooleanType;
-    iOSClipToPageBoundaries?: PDFConfiguration.BooleanType;
-    iOSBackgroundColor?: any;
-    iOSRenderAnimationEnabled?: PDFConfiguration.BooleanType;
-    iOSRenderStatusViewPosition?: PDFConfiguration.IOSRenderStatusViewPosition;
-    iOSAllowedAppearanceModes?: PDFConfiguration.IOSAllowedAppearanceModes;
+  // Document Presentation Options
+  pageMode?: PDFConfiguration.PageMode;
+  firstPageAlwaysSingle?: PDFConfiguration.BooleanType;
+  showPageLabels?: PDFConfiguration.BooleanType;
+  documentLabelEnabled?: PDFConfiguration.BooleanType;
+  spreadFitting?: PDFConfiguration.SpreadFitting;
+  invertColors?: PDFConfiguration.BooleanType;
+  androidGrayScale?: PDFConfiguration.BooleanType;
+  iOSClipToPageBoundaries?: PDFConfiguration.BooleanType;
+  iOSBackgroundColor?: any;
+  iOSRenderAnimationEnabled?: PDFConfiguration.BooleanType;
+  iOSRenderStatusViewPosition?: PDFConfiguration.IOSRenderStatusViewPosition;
+  iOSAllowedAppearanceModes?: PDFConfiguration.IOSAllowedAppearanceModes;
 
-    // User Interface Options
-    userInterfaceViewMode?: PDFConfiguration.UserInterfaceViewMode;
-    inlineSearch?: PDFConfiguration.BooleanType;
-    immersiveMode?: PDFConfiguration.BooleanType;
-    toolbarTitle?: string;
-    androidShowSearchAction?: PDFConfiguration.BooleanType;
-    androidShowOutlineAction?: PDFConfiguration.BooleanType;
-    androidShowBookmarksAction?: PDFConfiguration.BooleanType;
-    androidShowShareAction?: PDFConfiguration.BooleanType;
-    androidShowPrintAction?: PDFConfiguration.BooleanType;
-    androidShowDocumentInfoView?: PDFConfiguration.BooleanType;
-    androidShowSettingsMenu?: PDFConfiguration.BooleanType;
-    iOSShouldHideUserInterfaceOnPageChange?: PDFConfiguration.BooleanType;
-    iOSShouldShowUserInterfaceOnViewWillAppear?: PDFConfiguration.BooleanType;
-    iOSShouldHideStatusBarWithUserInterface?: PDFConfiguration.BooleanType;
-    iOSShouldHideNavigationBarWithUserInterface?: PDFConfiguration.BooleanType;
-    iOSSearchMode?: PDFConfiguration.IOSSearchMode;
-    iOSScrollOnEdgeTapEnabled?: PDFConfiguration.BooleanType;
-    iOSScrollOnEdgeTapMargin?: number;
-    iOSUseParentNavigationBar?: PDFConfiguration.BooleanType;
-    iOSAllowToolbarTitleChange?: PDFConfiguration.BooleanType;
-    iOSShouldHideStatusBar?: PDFConfiguration.BooleanType;
-    iOSShowBackActionButton?: PDFConfiguration.BooleanType;
-    iOSShowForwardActionButton?: PDFConfiguration.BooleanType;
-    iOSShowBackForwardActionButtonLabels?: PDFConfiguration.BooleanType;
-    iOSSearchResultZoomScale?: number;
-    iOSAdditionalScrollViewFrameInsets?: any
-    iOSAdditionalContentInsets?: any
-    iOSAllowedMenuActions?: PDFConfiguration.IOSAllowedMenuActions;
-    iOSSettingsOptions?: PDFConfiguration.IOSSettingsOptions[];
-    iOSShadowEnabled?: PDFConfiguration.BooleanType
-    iOSShadowOpacity?: number;
+  // User Interface Options
+  userInterfaceViewMode?: PDFConfiguration.UserInterfaceViewMode;
+  inlineSearch?: PDFConfiguration.BooleanType;
+  immersiveMode?: PDFConfiguration.BooleanType;
+  toolbarTitle?: string;
+  androidShowSearchAction?: PDFConfiguration.BooleanType;
+  androidShowOutlineAction?: PDFConfiguration.BooleanType;
+  androidShowBookmarksAction?: PDFConfiguration.BooleanType;
+  androidShowShareAction?: PDFConfiguration.BooleanType;
+  androidShowPrintAction?: PDFConfiguration.BooleanType;
+  androidShowDocumentInfoView?: PDFConfiguration.BooleanType;
+  androidShowSettingsMenu?: PDFConfiguration.BooleanType;
+  iOSShouldHideUserInterfaceOnPageChange?: PDFConfiguration.BooleanType;
+  iOSShouldShowUserInterfaceOnViewWillAppear?: PDFConfiguration.BooleanType;
+  iOSShouldHideStatusBarWithUserInterface?: PDFConfiguration.BooleanType;
+  iOSShouldHideNavigationBarWithUserInterface?: PDFConfiguration.BooleanType;
+  iOSSearchMode?: PDFConfiguration.IOSSearchMode;
+  iOSScrollOnEdgeTapEnabled?: PDFConfiguration.BooleanType;
+  iOSScrollOnEdgeTapMargin?: number;
+  iOSUseParentNavigationBar?: PDFConfiguration.BooleanType;
+  iOSAllowToolbarTitleChange?: PDFConfiguration.BooleanType;
+  iOSShouldHideStatusBar?: PDFConfiguration.BooleanType;
+  iOSShowBackActionButton?: PDFConfiguration.BooleanType;
+  iOSShowForwardActionButton?: PDFConfiguration.BooleanType;
+  iOSShowBackForwardActionButtonLabels?: PDFConfiguration.BooleanType;
+  iOSSearchResultZoomScale?: number;
+  iOSAdditionalScrollViewFrameInsets?: any;
+  iOSAdditionalContentInsets?: any;
+  iOSAllowedMenuActions?: PDFConfiguration.IOSAllowedMenuActions;
+  iOSSettingsOptions?: PDFConfiguration.IOSSettingsOptions[];
+  iOSShadowEnabled?: PDFConfiguration.BooleanType;
+  iOSShadowOpacity?: number;
 
-    // Thumbnail Options
-    showThumbnailBar?: PDFConfiguration.ShowThumbnailBar;
-    androidShowThumbnailGridAction?: PDFConfiguration.BooleanType;
-    iOSScrubberBarType?: PDFConfiguration.IOSScrubberBarType;
-    iOSThumbnailGrouping?: PDFConfiguration.IOSThumbnailGrouping;
-    iOSThumbnailSize?: any;
-    iOSThumbnailInteritemSpacing?: number;
-    iOSThumbnailLineSpacing?: number
-    iOSThumbnailMargin?: any
-    iOSShouldCacheThumbnails?: PDFConfiguration.BooleanType;
+  // Thumbnail Options
+  showThumbnailBar?: PDFConfiguration.ShowThumbnailBar;
+  androidShowThumbnailGridAction?: PDFConfiguration.BooleanType;
+  iOSScrubberBarType?: PDFConfiguration.IOSScrubberBarType;
+  iOSThumbnailGrouping?: PDFConfiguration.IOSThumbnailGrouping;
+  iOSThumbnailSize?: any;
+  iOSThumbnailInteritemSpacing?: number;
+  iOSThumbnailLineSpacing?: number;
+  iOSThumbnailMargin?: any;
+  iOSShouldCacheThumbnails?: PDFConfiguration.BooleanType;
 
-    // Annotation, Forms, and Bookmark Options
-    editableAnnotationTypes?: AnyCase<PDFConfiguration.EditableAnnotationTypes>[];
-    enableAnnotationEditing?: PDFConfiguration.BooleanType;
-    enableFormEditing?: PDFConfiguration.BooleanType;
-    androidShowAnnotationListAction?: PDFConfiguration.BooleanType;
-    iOSShouldAskForAnnotationUsername?: PDFConfiguration.BooleanType;
-    iOSLinkAction?: PDFConfiguration.IOSLinkAction;
-    iOSDrawCreateMode?: PDFConfiguration.IOSDrawCreateMode;
-    iOSAnnotationGroupingEnabled?: PDFConfiguration.BooleanType;
-    iOSNaturalDrawingAnnotationEnabled?: PDFConfiguration.BooleanType;
-    iOSNaturalSignatureDrawingEnabled?: PDFConfiguration.BooleanType;
-    iOSAnnotationEntersEditModeAfterSecondTapEnabled?: PDFConfiguration.BooleanType;
-    iOSCreateAnnotationMenuEnabled?: PDFConfiguration.BooleanType;
-    iOSAnnotationAnimationDuration?: number;
-    iOSSoundAnnotationTimeLimit?: number;
-    iOSBookmarkSortOrder?: PDFConfiguration.IOSBookmarkSortOrder;
+  // Annotation, Forms, and Bookmark Options
+  editableAnnotationTypes?: AnyCase<PDFConfiguration.EditableAnnotationTypes>[];
+  enableAnnotationEditing?: PDFConfiguration.BooleanType;
+  enableFormEditing?: PDFConfiguration.BooleanType;
+  androidShowAnnotationListAction?: PDFConfiguration.BooleanType;
+  iOSShouldAskForAnnotationUsername?: PDFConfiguration.BooleanType;
+  iOSLinkAction?: PDFConfiguration.IOSLinkAction;
+  iOSDrawCreateMode?: PDFConfiguration.IOSDrawCreateMode;
+  iOSAnnotationGroupingEnabled?: PDFConfiguration.BooleanType;
+  iOSNaturalDrawingAnnotationEnabled?: PDFConfiguration.BooleanType;
+  iOSNaturalSignatureDrawingEnabled?: PDFConfiguration.BooleanType;
+  iOSAnnotationEntersEditModeAfterSecondTapEnabled?: PDFConfiguration.BooleanType;
+  iOSCreateAnnotationMenuEnabled?: PDFConfiguration.BooleanType;
+  iOSAnnotationAnimationDuration?: number;
+  iOSSoundAnnotationTimeLimit?: number;
+  iOSBookmarkSortOrder?: PDFConfiguration.IOSBookmarkSortOrder;
 
-    // Instant Configuration
-    enableInstantComments?: PDFConfiguration.BooleanType;
-    listenToServerChanges?: PDFConfiguration.BooleanType;
-    delay?: number;
-    syncAnnotations?: PDFConfiguration.BooleanType;
+  // Instant Configuration
+  enableInstantComments?: PDFConfiguration.BooleanType;
+  listenToServerChanges?: PDFConfiguration.BooleanType;
+  delay?: number;
+  syncAnnotations?: PDFConfiguration.BooleanType;
 
-    // Measurement Configuration
-    measurementValueConfigurations?: MeasurementValueConfiguration[];
+  // Measurement Configuration
+  measurementValueConfigurations?: MeasurementValueConfiguration[];
 }
 
 export namespace PDFConfiguration {
+  /**
+   * A convenience type to select Boolean options.
+   * @readonly
+   * @enum {string} BooleanType
+   */
+  export const BooleanType = {
+    /**
+     * Set the value to ```true```.
+     */
+    TRUE: true,
+    /**
+     * Set the value to ```false```.
+     */
+    FALSE: false,
+  } as const;
 
-   /**
-    * A convenience type to select Boolean options.
-    * @readonly
-    * @enum {string} BooleanType
-    */
-    export const BooleanType = {
-       /**
-        * Set the value to ```true```.
-        */
-        TRUE: true,
-       /**
-        * Set the value to ```false```.
-        */
-        FALSE: false,
-    } as const;
+  /**
+   * Configures the direction of page scrolling in the document view.
+   * @readonly
+   * @enum {string} ScrollDirection
+   */
+  export const ScrollDirection = {
+    /**
+     * Enable horizontal scrolling.
+     */
+    HORIZONTAL: 'horizontal',
+    /**
+     * Enable vertical scrolling.
+     */
+    VERTICAL: 'vertical',
+  } as const;
 
-   /**
-    * Configures the direction of page scrolling in the document view.
-    * @readonly
-    * @enum {string} ScrollDirection
-    */
-    export const ScrollDirection = {
-       /**
-        * Enable horizontal scrolling.
-        */
-        HORIZONTAL: 'horizontal',
-       /**
-        * Enable vertical scrolling.
-        */
-        VERTICAL: 'vertical'
-    } as const;
+  /**
+   * Configures the page scrolling mode. Note that curl mode is only available for iOS and will be ignored on Android.
+   * @readonly
+   * @enum {string} PageTransition
+   */
+  export const PageTransition = {
+    /**
+     * Transitions from one spread to another and does not stop scrolling in between two spreads (paginated).
+     */
+    SCROLL_PER_SPREAD: 'scrollPerSpread',
+    /**
+     * Scrolls continuously.
+     */
+    SCROLL_CONTINUOUS: 'scrollContinuous',
+    /**
+     * Page curl mode, similar to Apple Books. Not supported with variable sized PDFs. Only available on iOS.
+     */
+    CURL: 'curl',
+  } as const;
 
-   /**
-    * Configures the page scrolling mode. Note that curl mode is only available for iOS and will be ignored on Android.
-    * @readonly
-    * @enum {string} PageTransition
-    */
-    export const PageTransition = {
-       /**
-        * Transitions from one spread to another and does not stop scrolling in between two spreads (paginated).
-        */
-        SCROLL_PER_SPREAD: 'scrollPerSpread',
-       /**
-        * Scrolls continuously.
-        */
-        SCROLL_CONTINUOUS: 'scrollContinuous',
-       /**
-        * Page curl mode, similar to Apple Books. Not supported with variable sized PDFs. Only available on iOS.
-        */
-        CURL: 'curl'
-    } as const;
+  /**
+   * The SignatureSavingStrategy options.
+   * @readonly
+   * @enum {string} SignatureSavingStrategy
+   */
+  export const SignatureSavingStrategy = {
+    /**
+     * Always save the signature after it is created.
+     */
+    ALWAYS_SAVE: 'alwaysSave',
+    /**
+     * Never save the signature after it is created.
+     */
+    NEVER_SAVE: 'neverSave',
+    /**
+     * Save the signature after it is created, if indicated by the user.
+     */
+    SAVE_IF_SELECTED: 'saveIfSelected',
+  } as const;
 
-   /**
-    * The SignatureSavingStrategy options.
-    * @readonly
-    * @enum {string} SignatureSavingStrategy
-    */
-    export const SignatureSavingStrategy = {
-       /**
-        * Always save the signature after it is created.
-        */
-        ALWAYS_SAVE: 'alwaysSave',
-       /**
-        * Never save the signature after it is created.
-        */
-        NEVER_SAVE: 'neverSave',
-       /**
-        * Save the signature after it is created, if indicated by the user.
-        */
-        SAVE_IF_SELECTED: 'saveIfSelected'
-    } as const;
+  /**
+   * The IOSDoubleTapAction options.
+   * @readonly
+   * @enum {string} IOSDoubleTapAction
+   */
+  export const IOSDoubleTapAction = {
+    /**
+     * Do not zoom on double tap.
+     */
+    NONE: 'none',
+    /**
+     * Zoom on double tap.
+     */
+    ZOOM: 'zoom',
+    /**
+     * Smart zoom on double tap.
+     */
+    SMART_ZOOM: 'smartZoom',
+  } as const;
 
-   /**
-    * The IOSDoubleTapAction options.
-    * @readonly
-    * @enum {string} IOSDoubleTapAction
-    */
-    export const IOSDoubleTapAction = {
-       /**
-        * Do not zoom on double tap.
-        */
-        NONE: 'none',
-       /**
-        * Zoom on double tap.
-        */
-        ZOOM: 'zoom',
-       /**
-        * Smart zoom on double tap.
-        */
-        SMART_ZOOM: 'smartZoom'
-    } as const;
+  /**
+   * The IOSTextSelectionMode options.
+   * @readonly
+   * @enum {string} IOSTextSelectionMode
+   */
+  export const IOSTextSelectionMode = {
+    /**
+     * Selecting text in regular mode starts after a long-press and results in a selection with dragging handles.
+     */
+    REGULAR: 'regular',
+    /**
+     * Selecting text in simple mode starts almost immediately on touch down and results in a selection with dragging handles.
+     */
+    SIMPLE: 'simple',
+    /**
+     * Selection mode will be chosen based on input device: selecting text with finger or Apple Pencil will use regular mode, while selecting text with trackpad or mouse will use simple mode.
+     */
+    AUTOMATIC: 'automatic',
+  } as const;
 
-   /**
-    * The IOSTextSelectionMode options.
-    * @readonly
-    * @enum {string} IOSTextSelectionMode
-    */
-    export const IOSTextSelectionMode = {
-       /**
-        * Selecting text in regular mode starts after a long-press and results in a selection with dragging handles.
-        */
-        REGULAR: 'regular',
-       /**
-        * Selecting text in simple mode starts almost immediately on touch down and results in a selection with dragging handles.
-        */
-        SIMPLE: 'simple',
-       /**
-        * Selection mode will be chosen based on input device: selecting text with finger or Apple Pencil will use regular mode, while selecting text with trackpad or mouse will use simple mode. 
-        */
-        AUTOMATIC: 'automatic'
-    } as const;
+  /**
+   * The IOSTypesShowingColorPresets options.
+   * @readonly
+   * @enum {string} IOSTypesShowingColorPresets
+   */
+  export const IOSTypesShowingColorPresets = {
+    NONE: 'none',
+    UNDEFINED: 'undefined',
+    ALL: 'all',
+    LINK: 'link',
+    HIGHLIGHT: 'highlight',
+    UNDERLINE: 'underline',
+    SQUIGGLY: 'squiggly',
+    STRIKE_OUT: 'strikeOut',
+    TEXT: 'text',
+    CARET: 'caret',
+    FREE_TEXT: 'freeText',
+    INK: 'ink',
+    SQUARE: 'square',
+    CIRCLE: 'circle',
+    LINE: 'line',
+    SIGNATURE: 'signature',
+    STAMP: 'stamp',
+    ERASER: 'eraser',
+    IMAGE: 'image',
+    WIDGET: 'widget',
+    FILE_ATTACHMENT: 'fileAttachment',
+    SOUND: 'sound',
+    POLYGON: 'polygon',
+    POLY_LINE: 'polyLine',
+    RICH_MEDIA: 'richMedia',
+    SCREEN: 'screen',
+    POPUP: 'popup',
+    WATERMARK: 'watermark',
+    TRAP_NET: 'trapNet',
+    '3D': '3D',
+    REDACT: 'redact',
+  } as const;
 
-   /**
-    * The IOSTypesShowingColorPresets options.
-    * @readonly
-    * @enum {string} IOSTypesShowingColorPresets
-    */
-    export const IOSTypesShowingColorPresets = {
-        NONE: 'none',
-        UNDEFINED: 'undefined',
-        ALL: 'all',
-        LINK: 'link',
-        HIGHLIGHT: 'highlight',
-        UNDERLINE: 'underline',
-        SQUIGGLY: 'squiggly',
-        STRIKE_OUT: 'strikeOut',
-        TEXT: 'text',
-        CARET: 'caret',
-        FREE_TEXT: 'freeText',
-        INK: 'ink',
-        SQUARE: 'square',
-        CIRCLE: 'circle',
-        LINE: 'line',
-        SIGNATURE: 'signature',
-        STAMP: 'stamp',
-        ERASER: 'eraser',
-        IMAGE: 'image',
-        WIDGET: 'widget',
-        FILE_ATTACHMENT: 'fileAttachment',
-        SOUND: 'sound',
-        POLYGON: 'polygon',
-        POLY_LINE: 'polyLine',
-        RICH_MEDIA: 'richMedia',
-        SCREEN: 'screen',
-        POPUP: 'popup',
-        WATERMARK: 'watermark',
-        TRAP_NET: 'trapNet',
-        '3D': '3D',
-        REDACT: 'redact',
-    } as const;
+  /**
+   * The PageMode options.
+   * @readonly
+   * @enum {string} PageMode
+   */
+  export const PageMode = {
+    /**
+     * Always show a single page.
+     */
+    SINGLE: 'single',
+    /**
+     * Always show two pages side-by-side.
+     */
+    DOUBLE: 'double',
+    /**
+     * Show two pages only when the view is sufficiently large and two pages can be shown without too much shrinking.
+     */
+    AUTOMATIC: 'automatic',
+  } as const;
 
-   /**
-    * The PageMode options.
-    * @readonly
-    * @enum {string} PageMode
-    */
-    export const PageMode = {
-       /**
-        * Always show a single page.
-        */
-        SINGLE: 'single',
-       /**
-        * Always show two pages side-by-side.
-        */
-        DOUBLE: 'double',
-       /**
-        * Show two pages only when the view is sufficiently large and two pages can be shown without too much shrinking.
-        */
-        AUTOMATIC: 'automatic'
-    } as const;
+  /**
+   * The SpreadFitting options.
+   * @readonly
+   * @enum {string} SpreadFitting
+   */
+  export const SpreadFitting = {
+    /**
+     * Aspect fit results in a spread view having all its pages always visible on screen.
+     */
+    FIT: 'fit',
+    /**
+     * Aspect fills the content so that it completely covers the width of the view.
+     */
+    FILL: 'fill',
+    /**
+     * Automatically switches between ```fit``` and ```fill```.
+     */
+    ADAPTIVE: 'adaptive',
+  } as const;
 
-   /**
-    * The SpreadFitting options.
-    * @readonly
-    * @enum {string} SpreadFitting
-    */
-    export const SpreadFitting = {
-       /**
-        * Aspect fit results in a spread view having all its pages always visible on screen.
-        */
-        FIT: 'fit',
-       /**
-        * Aspect fills the content so that it completely covers the width of the view.
-        */
-        FILL: 'fill',
-       /**
-        * Automatically switches between ```fit``` and ```fill```.
-        */
-        ADAPTIVE: 'adaptive'
-    } as const;
+  /**
+   * The IOSRenderStatusViewPosition options.
+   * @readonly
+   * @enum {string} IOSRenderStatusViewPosition
+   */
+  export const IOSRenderStatusViewPosition = {
+    /**
+     * Display render status view at the top.
+     */
+    TOP: 'top',
+    /**
+     * Display render status view at the center.
+     */
+    CENTERED: 'centered',
+  } as const;
 
-   /**
-    * The IOSRenderStatusViewPosition options.
-    * @readonly
-    * @enum {string} IOSRenderStatusViewPosition
-    */
-    export const IOSRenderStatusViewPosition = {
-       /**
-        * Display render status view at the top.
-        */
-        TOP: 'top',
-       /**
-        * Display render status view at the center.
-        */
-        CENTERED: 'centered'
-    } as const;
+  /**
+   * The IOSAllowedAppearanceModes options.
+   * @readonly
+   * @enum {string} IOSAllowedAppearanceModes
+   */
+  export const IOSAllowedAppearanceModes = {
+    /**
+     * Normal application appearance and page rendering, as configured by the host app.
+     */
+    DEFAULT: 'default',
+    /**
+     * Renders the PDF content with a sepia tone.
+     */
+    SEPIA: 'sepia',
+    /**
+     * Inverts the PDF page content and applies color correction.
+     */
+    NIGHT: 'night',
+    /**
+     * All options.
+     */
+    ALL: 'all',
+  } as const;
 
-   /**
-    * The IOSAllowedAppearanceModes options.
-    * @readonly
-    * @enum {string} IOSAllowedAppearanceModes
-    */
-    export const IOSAllowedAppearanceModes = {
-       /**
-        * Normal application appearance and page rendering, as configured by the host app.
-        */
-        DEFAULT: 'default',
-       /**
-        * Renders the PDF content with a sepia tone.
-        */
-        SEPIA: 'sepia',
-       /**
-        * Inverts the PDF page content and applies color correction.
-        */
-        NIGHT: 'night',
-       /**
-        * All options.
-        */
-        ALL: 'all',
-    } as const;
+  /**
+   * The UserInterfaceViewMode options.
+   * @readonly
+   * @enum {string} UserInterfaceViewMode
+   */
+  export const UserInterfaceViewMode = {
+    /**
+     * Show user interface view on touch and first/last page.
+     */
+    AUTOMATIC: 'automatic',
+    /**
+     * Show user interface view on touch and first/last page.
+     */
+    AUTOMATIC_BORDER_PAGES: 'automaticBorderPages',
+    /**
+     * Show user interface view on touch.
+     */
+    AUTOMATIC_NO_FIRST_LAST_PAGE: 'automaticNoFirstLastPage',
+    /**
+     * Always show the user interface view.
+     */
+    ALWAYS: 'always',
+    /**
+     * Always show the user interface view.
+     */
+    ALWAYS_VISIBLE: 'alwaysVisible',
+    /**
+     * Never show the user interface view.
+     */
+    ALWAYS_HIDDEN: 'alwaysHidden',
+    /**
+     * Never show the user interface view.
+     */
+    NEVER: 'never',
+  } as const;
 
-   /**
-    * The UserInterfaceViewMode options.
-    * @readonly
-    * @enum {string} UserInterfaceViewMode
-    */    
-    export const UserInterfaceViewMode = {
-       /**
-        * Show user interface view on touch and first/last page.
-        */
-        AUTOMATIC: 'automatic',
-       /**
-        * Show user interface view on touch and first/last page.
-        */
-        AUTOMATIC_BORDER_PAGES: 'automaticBorderPages',
-       /**
-        * Show user interface view on touch.
-        */
-        AUTOMATIC_NO_FIRST_LAST_PAGE: 'automaticNoFirstLastPage',
-       /**
-        * Always show the user interface view.
-        */
-        ALWAYS: 'always',
-       /**
-        * Always show the user interface view.
-        */
-        ALWAYS_VISIBLE: 'alwaysVisible',
-       /**
-        * Never show the user interface view.
-        */
-        ALWAYS_HIDDEN: 'alwaysHidden',
-       /**
-        * Never show the user interface view.
-        */
-        NEVER: 'never',
-    } as const;
+  /**
+   * The IOSSearchMode options.
+   * @readonly
+   * @enum {string} IOSSearchMode
+   */
+  export const IOSSearchMode = {
+    /**
+     * Display search results in a modal view.
+     */
+    MODAL: 'modal',
+    /**
+     * Display search results inline.
+     */
+    INLINE: 'inline',
+  } as const;
 
-   /**
-    * The IOSSearchMode options.
-    * @readonly
-    * @enum {string} IOSSearchMode
-    */     
-    export const IOSSearchMode = {
-       /**
-        * Display search results in a modal view.
-        */
-        MODAL: 'modal',
-       /**
-        * Display search results inline.
-        */
-        INLINE: 'inline'
-    } as const;
+  /**
+   * The IOSAllowedMenuActions options.
+   * @readonly
+   * @enum {string} IOSAllowedMenuActions
+   */
+  export const IOSAllowedMenuActions = {
+    /**
+     * Allow no action.
+     */
+    NONE: 'none',
+    /**
+     * Allow searching the document with selected text.
+     */
+    SEARCH: 'search',
+    /**
+     * Allow presenting the definition for selected text.
+     */
+    DEFINE: 'define',
+    /**
+     * Allow searching Wikipedia with selected text.
+     */
+    WIKIPEDIA: 'wikipedia',
+    /**
+     * Allow accessibility text-to-speech.
+     */
+    SPEAK: 'speak',
+    /**
+     * Allow all actions.
+     */
+    ALL: 'all',
+  } as const;
 
-   /**
-    * The IOSAllowedMenuActions options.
-    * @readonly
-    * @enum {string} IOSAllowedMenuActions
-    */  
-    export const IOSAllowedMenuActions = {
-       /**
-        * Allow no action.
-        */
-        NONE: 'none',
-       /**
-        * Allow searching the document with selected text.
-        */
-        SEARCH: 'search',
-       /**
-        * Allow presenting the definition for selected text.
-        */
-        DEFINE: 'define',
-       /**
-        * Allow searching Wikipedia with selected text.
-        */
-        WIKIPEDIA: 'wikipedia',
-       /**
-        * Allow accessibility text-to-speech.
-        */
-        SPEAK: 'speak',
-       /**
-        * Allow all actions.
-        */
-        ALL: 'all'
-    } as const;
+  /**
+   * The IOSSettingsOptions options.
+   * @readonly
+   * @enum {string} IOSSettingsOptions
+   */
+  export const IOSSettingsOptions = {
+    /**
+     * Shows UI to change ```ScrollDirection```.
+     */
+    SCROLL_DIRECTION: 'scrollDirection',
+    /**
+     * Shows UI to change ```PageTransition``` (continuous or per-spread scrolling).
+     */
+    PAGE_TRANSITION: 'pageTransition',
+    /**
+     * Shows UI to change ```AppearanceMode``` (sepia and dark rendering).
+     */
+    APPEARANCE: 'appearance',
+    /**
+     * Shows UI to adjust screen brightness.
+     */
+    BRIGHTNESS: 'brightness',
+    /**
+     * Shows UI to change ```PageMode``` (single or double page mode).
+     */
+    PAGE_MODE: 'pageMode',
+    /**
+     * The default set of settings the user can adjust with ```PDFSettingsViewController```.
+     */
+    DEFAULT: 'default',
+    /**
+     * All the settings that can be set by a ```PDFSettingsViewController```.
+     */
+    ALL: 'all',
+  } as const;
 
-   /**
-    * The IOSSettingsOptions options.
-    * @readonly
-    * @enum {string} IOSSettingsOptions
-    */  
-    export const IOSSettingsOptions = {
-       /**
-        * Shows UI to change ```ScrollDirection```.
-        */
-        SCROLL_DIRECTION: 'scrollDirection',
-       /**
-        * Shows UI to change ```PageTransition``` (continuous or per-spread scrolling).
-        */
-        PAGE_TRANSITION: 'pageTransition',
-       /**
-        * Shows UI to change ```AppearanceMode``` (sepia and dark rendering).
-        */
-        APPEARANCE: 'appearance',
-       /**
-        * Shows UI to adjust screen brightness.
-        */
-        BRIGHTNESS: 'brightness',
-       /**
-        * Shows UI to change ```PageMode``` (single or double page mode).
-        */
-        PAGE_MODE: 'pageMode',
-       /**
-        * The default set of settings the user can adjust with ```PDFSettingsViewController```.
-        */
-        DEFAULT: 'default',
-       /**
-        * All the settings that can be set by a ```PDFSettingsViewController```.
-        */
-        ALL: 'all'
-    } as const;
+  /**
+   * The ShowThumbnailBar options.
+   * @readonly
+   * @enum {string} ShowThumbnailBar
+   */
+  export const ShowThumbnailBar = {
+    /**
+     * Don't show any thumbnails.
+     */
+    NONE: 'none',
+    /**
+     * The default thumbnail bar (like Apple Books, ```ScrubberBar```)
+     */
+    DEFAULT: 'default',
+    /**
+     * Show a floating scrubber bar (```ScrubberBar```)
+     */
+    FLOATING: 'floating',
+    /**
+     * Show a pinned scrubber bar (```ScrubberBar```)
+     */
+    PINNED: 'pinned',
+    /**
+     * Show scrubber bar (like Apple Books, ```ScrubberBar```)
+     */
+    SCRUBBER_BAR: 'scrubberBar',
+    /**
+     * Show scrollable thumbnail bar (```ThumbnailBar```)
+     */
+    SCROLLABLE: 'scrollable',
+  } as const;
 
-   /**
-    * The ShowThumbnailBar options.
-    * @readonly
-    * @enum {string} ShowThumbnailBar
-    */  
-    export const ShowThumbnailBar = {
-       /**
-        * Don't show any thumbnails.
-        */
-        NONE: 'none',
-       /**
-        * The default thumbnail bar (like Apple Books, ```ScrubberBar```)
-        */
-        DEFAULT: 'default',
-       /**
-        * Show a floating scrubber bar (```ScrubberBar```)
-        */
-        FLOATING: 'floating',
-       /**
-        * Show a pinned scrubber bar (```ScrubberBar```)
-        */
-        PINNED: 'pinned',
-       /**
-        * Show scrubber bar (like Apple Books, ```ScrubberBar```)
-        */
-        SCRUBBER_BAR: 'scrubberBar',
-       /**
-        * Show scrollable thumbnail bar (```ThumbnailBar```)
-        */
-        SCROLLABLE: 'scrollable'
-    } as const;
+  /**
+   * The IOSScrubberBarType options.
+   * @readonly
+   * @enum {string} IOSScrubberBarType
+   */
+  export const IOSScrubberBarType = {
+    /**
+     * The default style: A scrubber bar that lays out its thumbnails along its width.
+     */
+    HORIZONTAL: 'horizontal',
+    /**
+     * Style for a scrubber bar that lays out its thumbnails along its height and sits along the left edge of its container.
+     */
+    VERTICAL_LEFT: 'verticalLeft',
+    /**
+     * Style for a scrubber bar that lays out its thumbnails along its height and sits along the right edge of its container view.
+     */
+    VERTICAL_RIGHT: 'verticalRight',
+  } as const;
 
-   /**
-    * The IOSScrubberBarType options.
-    * @readonly
-    * @enum {string} IOSScrubberBarType
-    */  
-    export const IOSScrubberBarType = {
-       /**
-        * The default style: A scrubber bar that lays out its thumbnails along its width.
-        */
-        HORIZONTAL: 'horizontal',
-       /**
-        * Style for a scrubber bar that lays out its thumbnails along its height and sits along the left edge of its container.
-        */
-        VERTICAL_LEFT: 'verticalLeft',
-       /**
-        * Style for a scrubber bar that lays out its thumbnails along its height and sits along the right edge of its container view.
-        */
-        VERTICAL_RIGHT: 'verticalRight'
-    } as const;
+  /**
+   * The IOSThumbnailGrouping options.
+   * @readonly
+   * @enum {string} IOSThumbnailGrouping
+   */
+  export const IOSThumbnailGrouping = {
+    /**
+     * Group double pages when ```PageMode.double``` is enabled.
+     */
+    AUTOMATIC: 'automatic',
+    /**
+     * Never group double pages for thumbnails.
+     */
+    NEVER: 'never',
+    /**
+     * Always group double pages for thumbnails.
+     */
+    ALWAYS: 'always',
+  } as const;
 
-   /**
-    * The IOSThumbnailGrouping options.
-    * @readonly
-    * @enum {string} IOSThumbnailGrouping
-    */  
-    export const IOSThumbnailGrouping = {
-       /**
-        * Group double pages when ```PageMode.double``` is enabled.
-        */
-        AUTOMATIC: 'automatic',
-       /**
-        * Never group double pages for thumbnails.
-        */
-        NEVER: 'never',
-       /**
-        * Always group double pages for thumbnails.
-        */
-        ALWAYS: 'always'
-    } as const;
-    
-   /**
-    * The EditableAnnotationTypes options.
-    * @readonly
-    * @enum {string} EditableAnnotationTypes
-    */
-    export const EditableAnnotationTypes = {
-        NONE: 'none',
-        UNDEFINED: 'undefined',
-        ALL: 'all',
-        LINK: 'link',
-        HIGHLIGHT: 'highlight',
-        UNDERLINE: 'underline',
-        SQUIGGLY: 'squiggly',
-        STRIKE_OUT: 'strikeOut',
-        TEXT: 'text',
-        CARET: 'caret',
-        FREE_TEXT: 'freeText',
-        INK: 'ink',
-        SQUARE: 'square',
-        CIRCLE: 'circle',
-        LINE: 'line',
-        SIGNATURE: 'signature',
-        STAMP: 'stamp',
-        ERASER: 'eraser',
-        IMAGE: 'image',
-        WIDGET: 'widget',
-        FILE_ATTACHMENT: 'fileAttachment',
-        SOUND: 'sound',
-        POLYGON: 'polygon',
-        POLY_LINE: 'polyLine',
-        RICH_MEDIA: 'richMedia',
-        SCREEN: 'screen',
-        POPUP: 'popup',
-        WATERMARK: 'watermark',
-        TRAP_NET: 'trapNet',
-        '3D': '3D',
-        REDACT: 'redact',
-    } as const;
+  /**
+   * The EditableAnnotationTypes options.
+   * @readonly
+   * @enum {string} EditableAnnotationTypes
+   */
+  export const EditableAnnotationTypes = {
+    NONE: 'none',
+    UNDEFINED: 'undefined',
+    ALL: 'all',
+    LINK: 'link',
+    HIGHLIGHT: 'highlight',
+    UNDERLINE: 'underline',
+    SQUIGGLY: 'squiggly',
+    STRIKE_OUT: 'strikeOut',
+    TEXT: 'text',
+    CARET: 'caret',
+    FREE_TEXT: 'freeText',
+    INK: 'ink',
+    SQUARE: 'square',
+    CIRCLE: 'circle',
+    LINE: 'line',
+    SIGNATURE: 'signature',
+    STAMP: 'stamp',
+    ERASER: 'eraser',
+    IMAGE: 'image',
+    WIDGET: 'widget',
+    FILE_ATTACHMENT: 'fileAttachment',
+    SOUND: 'sound',
+    POLYGON: 'polygon',
+    POLY_LINE: 'polyLine',
+    RICH_MEDIA: 'richMedia',
+    SCREEN: 'screen',
+    POPUP: 'popup',
+    WATERMARK: 'watermark',
+    TRAP_NET: 'trapNet',
+    '3D': '3D',
+    REDACT: 'redact',
+  } as const;
 
-   /**
-    * The IOSLinkAction options.
-    * @readonly
-    * @enum {string} IOSLinkAction
-    */  
-    export const IOSLinkAction = {
-       /**
-        * Link actions are ignored.
-        */
-        AUTOMATIC: 'none',
-       /**
-        * Link actions open an ```UIAlertView```.
-        */
-        ALERT_VIEW: 'alertView',
-       /**
-        * Link actions directly open Safari or whichever app is set as the default browser.
-        */
-        OPEN_SAFARI: 'openSafari',
-       /**
-        * Link actions open in an ```SFSafariViewController```, falling back on ```PDFWebViewController``` for local file URLs.
-        */
-        INLINE_BROWSER: 'inlineBrowser',
-       /**
-        * Always uses ```PDFWebViewController```.
-        */
-        INLINE_WEB_VIEW_CONTROLLER: 'InlineWebViewController'
-    } as const;
+  /**
+   * The IOSLinkAction options.
+   * @readonly
+   * @enum {string} IOSLinkAction
+   */
+  export const IOSLinkAction = {
+    /**
+     * Link actions are ignored.
+     */
+    AUTOMATIC: 'none',
+    /**
+     * Link actions open an ```UIAlertView```.
+     */
+    ALERT_VIEW: 'alertView',
+    /**
+     * Link actions directly open Safari or whichever app is set as the default browser.
+     */
+    OPEN_SAFARI: 'openSafari',
+    /**
+     * Link actions open in an ```SFSafariViewController```, falling back on ```PDFWebViewController``` for local file URLs.
+     */
+    INLINE_BROWSER: 'inlineBrowser',
+    /**
+     * Always uses ```PDFWebViewController```.
+     */
+    INLINE_WEB_VIEW_CONTROLLER: 'InlineWebViewController',
+  } as const;
 
-   /**
-    * The IOSDrawCreateMode options.
-    * @readonly
-    * @enum {string} IOSDrawCreateMode
-    */  
-    export const IOSDrawCreateMode = {
-       /**
-        * Every stroke will result in a separate ink annotation.
-        */
-        SEPARATE: 'separate',
-       /**
-        * Strokes that have the same color/width are merged.
-        */
-        MERGE_IF_POSSIBLE: 'mergeIfPossible'
-    } as const;
+  /**
+   * The IOSDrawCreateMode options.
+   * @readonly
+   * @enum {string} IOSDrawCreateMode
+   */
+  export const IOSDrawCreateMode = {
+    /**
+     * Every stroke will result in a separate ink annotation.
+     */
+    SEPARATE: 'separate',
+    /**
+     * Strokes that have the same color/width are merged.
+     */
+    MERGE_IF_POSSIBLE: 'mergeIfPossible',
+  } as const;
 
-   /**
-    * The IOSBookmarkSortOrder options.
-    * @readonly
-    * @enum {string} IOSBookmarkSortOrder
-    */  
-    export const IOSBookmarkSortOrder = {
-       /**
-        * Custom sort order, based on creation, but reorderable.
-        */
-        CUSTOM: 'custom',
-       /**
-        * Sort based on pages.
-        */
-        PAGE_BASED: 'pageBased'
-    } as const;
-    
-    export type BooleanType = ValueOf<typeof BooleanType>;
-    export type ScrollDirection = ValueOf<typeof ScrollDirection>;
-    export type PageTransition = ValueOf<typeof PageTransition>;
-    export type SignatureSavingStrategy = ValueOf<typeof SignatureSavingStrategy>;
-    export type IOSDoubleTapAction = ValueOf<typeof IOSDoubleTapAction>;
-    export type IOSTextSelectionMode = ValueOf<typeof IOSTextSelectionMode>;
-    export type IOSTypesShowingColorPresets = ValueOf<typeof IOSTypesShowingColorPresets>;
-    export type PageMode = ValueOf<typeof PageMode>;
-    export type SpreadFitting = ValueOf<typeof SpreadFitting>;
-    export type IOSRenderStatusViewPosition = ValueOf<typeof IOSRenderStatusViewPosition>;
-    export type IOSAllowedAppearanceModes = ValueOf<typeof IOSAllowedAppearanceModes>;
-    export type UserInterfaceViewMode = ValueOf<typeof UserInterfaceViewMode>;
-    export type IOSSearchMode = ValueOf<typeof IOSSearchMode>;
-    export type IOSAllowedMenuActions = ValueOf<typeof IOSAllowedMenuActions>;
-    export type IOSSettingsOptions = ValueOf<typeof IOSSettingsOptions>;
-    export type ShowThumbnailBar = ValueOf<typeof ShowThumbnailBar>;
-    export type IOSScrubberBarType = ValueOf<typeof IOSScrubberBarType>;
-    export type IOSThumbnailGrouping = ValueOf<typeof IOSThumbnailGrouping>;
-    export type EditableAnnotationTypes = ValueOf<typeof EditableAnnotationTypes>;
-    export type IOSLinkAction = ValueOf<typeof IOSLinkAction>;
-    export type IOSDrawCreateMode = ValueOf<typeof IOSDrawCreateMode>;
-    export type IOSBookmarkSortOrder = ValueOf<typeof IOSBookmarkSortOrder>;
+  /**
+   * The IOSBookmarkSortOrder options.
+   * @readonly
+   * @enum {string} IOSBookmarkSortOrder
+   */
+  export const IOSBookmarkSortOrder = {
+    /**
+     * Custom sort order, based on creation, but reorderable.
+     */
+    CUSTOM: 'custom',
+    /**
+     * Sort based on pages.
+     */
+    PAGE_BASED: 'pageBased',
+  } as const;
+
+  export type BooleanType = ValueOf<typeof BooleanType>;
+  export type ScrollDirection = ValueOf<typeof ScrollDirection>;
+  export type PageTransition = ValueOf<typeof PageTransition>;
+  export type SignatureSavingStrategy = ValueOf<typeof SignatureSavingStrategy>;
+  export type IOSDoubleTapAction = ValueOf<typeof IOSDoubleTapAction>;
+  export type IOSTextSelectionMode = ValueOf<typeof IOSTextSelectionMode>;
+  export type IOSTypesShowingColorPresets = ValueOf<
+    typeof IOSTypesShowingColorPresets
+  >;
+  export type PageMode = ValueOf<typeof PageMode>;
+  export type SpreadFitting = ValueOf<typeof SpreadFitting>;
+  export type IOSRenderStatusViewPosition = ValueOf<
+    typeof IOSRenderStatusViewPosition
+  >;
+  export type IOSAllowedAppearanceModes = ValueOf<
+    typeof IOSAllowedAppearanceModes
+  >;
+  export type UserInterfaceViewMode = ValueOf<typeof UserInterfaceViewMode>;
+  export type IOSSearchMode = ValueOf<typeof IOSSearchMode>;
+  export type IOSAllowedMenuActions = ValueOf<typeof IOSAllowedMenuActions>;
+  export type IOSSettingsOptions = ValueOf<typeof IOSSettingsOptions>;
+  export type ShowThumbnailBar = ValueOf<typeof ShowThumbnailBar>;
+  export type IOSScrubberBarType = ValueOf<typeof IOSScrubberBarType>;
+  export type IOSThumbnailGrouping = ValueOf<typeof IOSThumbnailGrouping>;
+  export type EditableAnnotationTypes = ValueOf<typeof EditableAnnotationTypes>;
+  export type IOSLinkAction = ValueOf<typeof IOSLinkAction>;
+  export type IOSDrawCreateMode = ValueOf<typeof IOSDrawCreateMode>;
+  export type IOSBookmarkSortOrder = ValueOf<typeof IOSBookmarkSortOrder>;
 }
 
-export type AnyCase<T extends string> =
-string extends T ? string :
-T extends `${infer F1}${infer F2}${infer R}` ? (
-    `${Uppercase<F1> | Lowercase<F1>}${Uppercase<F2> | Lowercase<F2>}${AnyCase<R>}`
-) :
-T extends `${infer F}${infer R}` ? `${Uppercase<F> | Lowercase<F>}${AnyCase<R>}` :
-"";
+export type AnyCase<T extends string> = string extends T
+  ? string
+  : T extends `${infer F1}${infer F2}${infer R}`
+  ? `${Uppercase<F1> | Lowercase<F1>}${
+      | Uppercase<F2>
+      | Lowercase<F2>}${AnyCase<R>}`
+  : T extends `${infer F}${infer R}`
+  ? `${Uppercase<F> | Lowercase<F>}${AnyCase<R>}`
+  : '';
 
 type ValueOf<T> = T[keyof T];
