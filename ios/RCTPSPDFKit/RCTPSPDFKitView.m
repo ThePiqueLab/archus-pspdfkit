@@ -13,10 +13,10 @@
 #import "RCTConvert+PSPDFViewMode.h"
 #import "RCTConvert+UIBarButtonItem.h"
 #import "RCTConvert+PSPDFDocument.h"
-#if __has_include("PSPDFKitReactNativeiOS-Swift.h")
-#import "PSPDFKitReactNativeiOS-Swift.h"
+#if __has_include("ArchusPSPDFKitReactNativeiOS-Swift.h")
+#import "ArchusPSPDFKitReactNativeiOS-Swift.h"
 #else
-#import <PSPDFKitReactNativeiOS/PSPDFKitReactNativeiOS-Swift.h>
+#import <ArchusPSPDFKitReactNativeiOS/ArchusPSPDFKitReactNativeiOS-Swift.h>
 #endif
 
 #define VALIDATE_DOCUMENT(document, ...) { if (!document.isValid) { NSLog(@"Document is invalid."); if (self.onDocumentLoadFailed) { self.onDocumentLoadFailed(@{@"error": @"Document is invalid."}); } return __VA_ARGS__; }}

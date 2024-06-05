@@ -15,10 +15,10 @@
 #import "RCTConvert+PSPDFViewMode.h"
 #import "RCTConvert+PSPDFConfiguration.h"
 #import "RCTPSPDFKitView.h"
-#if __has_include("PSPDFKitReactNativeiOS-Swift.h")
-#import "PSPDFKitReactNativeiOS-Swift.h"
+#if __has_include("ArchusPSPDFKitReactNativeiOS-Swift.h")
+#import "ArchusPSPDFKitReactNativeiOS-Swift.h"
 #else
-#import <PSPDFKitReactNativeiOS/PSPDFKitReactNativeiOS-Swift.h>
+#import <ArchusPSPDFKitReactNativeiOS/ArchusPSPDFKitReactNativeiOS-Swift.h>
 #endif
 
 #import <React/RCTUIManager.h>

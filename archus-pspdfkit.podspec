@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.authors           = { "PSPDFKit GmbH" => "support@pspdfkit.com" }
   s.homepage          = "https://pspdfkit.com/guides/react-native/"
   s.platform          = :ios, "15.0"
-  s.module_name       = "PSPDFKitReactNativeiOS"
+  s.module_name       = "ArchusPSPDFKitReactNativeiOS"
   s.source            = { git: "https://github.com/ThePiqueLab/archus-pspdfkit" }
   s.source_files      = "ios/*.{xcodeproj}", "ios/RCTPSPDFKit/*.{h,m,swift}", "ios/RCTPSPDFKit/Converters/*.{h,m,swift}", "ios/RCTPSPDFKit/Helpers/*.{h,m,swift}"
   s.dependency("React")
