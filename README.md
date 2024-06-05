@@ -61,7 +61,7 @@ PSPDFKit.setLicenseKey('YOUR_REACT_NATIVE_LICENSE_KEY_GOES_HERE');
 
 ### Getting Started
 
-Let's create a simple app that integrates PSPDFKit and uses the `react-native-pspdfkit` module.
+Let's create a simple app that integrates PSPDFKit and uses the `archus-pspdfkit` module.
 
 1. In the terminal app, change the current working directory to the location you wish to save your project. In this example, we’ll use the `~/Documents/` directory:
 
@@ -125,7 +125,7 @@ Let's create a simple app that integrates PSPDFKit and uses the `react-native-ps
        inherit! :complete
        # Pods for testing
      end
-   + pod 'react-native-pspdfkit', :path => '../node_modules/react-native-pspdfkit'
+   + pod 'archus-pspdfkit', :path => '../node_modules/archus-pspdfkit'
    + pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/pspdfkit-ios/latest.podspec'
      # Enables Flipper.
      #
@@ -186,7 +186,7 @@ Let's create a simple app that integrates PSPDFKit and uses the `react-native-ps
    ```js
    import React, { Component } from 'react';
    import { Platform } from 'react-native';
-   import PSPDFKitView from 'react-native-pspdfkit';
+   import PSPDFKitView from 'archus-pspdfkit';
 
    const DOCUMENT =
      Platform.OS === 'ios'
@@ -270,7 +270,7 @@ This is how you would show a PDF as a React component:
 ```javascript
 import React, { Component } from 'react';
 import { NativeModules } from 'react-native';
-import PSPDFKitView from 'react-native-pspdfkit';
+import PSPDFKitView from 'archus-pspdfkit';
 
 export default class App extends Component<{}> {
   render() {
@@ -433,7 +433,7 @@ For a runnable example, please take a look at the [AnnotationProcessing example 
 
 ### Getting Started
 
-Let's create a simple app that integrates PSPDFKit and uses the `react-native-pspdfkit` module.
+Let's create a simple app that integrates PSPDFKit and uses the `archus-pspdfkit` module.
 
 1. In the terminal app, change the current working directory to the location you wish to save your project. In this example, we’ll use the `~/Documents/` directory:
 
@@ -530,7 +530,7 @@ Let's create a simple app that integrates PSPDFKit and uses the `react-native-ps
    ```js
    import React, { Component } from 'react';
    import { Platform } from 'react-native';
-   import PSPDFKitView from 'react-native-pspdfkit';
+   import PSPDFKitView from 'archus-pspdfkit';
 
    const DOCUMENT =
      Platform.OS === 'ios'
@@ -619,7 +619,7 @@ On Android, PSPDFKit for React Native allows you to specify a custom grouping fo
 
 ### Update
 
-Upgrading yarn's lock file is required in order to update react-native-pspdfkit module in a project that has been already setup following the steps in [Getting Started](#getting-started-1) section.
+Upgrading yarn's lock file is required in order to update archus-pspdfkit module in a project that has been already setup following the steps in [Getting Started](#getting-started-1) section.
 From root project folder (e.g.`YourApp` for upgrading example project) launch `yarn upgrade`.
 
 #### Migrate from PSPDFKit version 2.9.x to 3.0.0
@@ -651,7 +651,7 @@ Remove `pspdfkit-lib` folder in `YourApp/android/`.
 In `YourApp/android/settings.gradle` remove the old reference to `pspdfkit-lib` (note **one** place to edit):
 
 ```diff
- project(':react-native-pspdfkit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pspdfkit/android')
+ project(':archus-pspdfkit').projectDir = new File(rootProject.projectDir, '../node_modules/archus-pspdfkit/android')
  include ':app'
 -include ':pspdfkit-lib'
 ```
