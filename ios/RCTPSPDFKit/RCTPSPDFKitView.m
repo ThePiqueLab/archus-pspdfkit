@@ -53,6 +53,9 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(annotationChangedNotification:) name:PSPDFAnnotationsRemovedNotification object:nil];
 
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(spreadIndexDidChange:) name:PSPDFDocumentViewControllerSpreadIndexDidChangeNotification object:nil];
+    
+//    _tabBarController = [[TabbedExampleViewController alloc] initwith]
+    _tabBarController = [[TabbedExampleViewController alloc] initWithPDFViewController:_pdfController];
   }
   
   return self;

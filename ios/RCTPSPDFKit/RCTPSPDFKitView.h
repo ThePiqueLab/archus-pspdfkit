@@ -9,6 +9,11 @@
 
 #import <UIKit/UIKit.h>
 #import <React/RCTComponent.h>
+#if __has_include("ArchusPSPDFKitReactNativeiOS-Swift.h")
+#import "ArchusPSPDFKitReactNativeiOS-Swift.h"
+#else
+#import <ArchusPSPDFKitReactNativeiOS/ArchusPSPDFKitReactNativeiOS-Swift.h>
+#endif
 
 @import PSPDFKit;
 @import PSPDFKitUI;
@@ -18,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RCTPSPDFKitView: UIView
 
 @property (nonatomic, readonly) PSPDFViewController *pdfController;
+@property (nonatomic, copy) TabbedExampleViewController *tabBarController;
 @property (nonatomic) BOOL hideNavigationBar;
 @property (nonatomic, readonly) UIBarButtonItem *closeButton;
 @property (nonatomic) BOOL disableDefaultActionForTappedAnnotations;
