@@ -58,6 +58,31 @@
   return self;
 }
 
+- (instancetype)initWithFrameAndConfiguration:(CGRect)frame configuration:(PSPDFConfiguration*)configuration {
+  if ((self = [super initWithFrame:frame])) {
+    _pdfController = [[RCTPSPDFKitViewController alloc] initWithDocument:nil configuration:configuration];
+    _pdfController.delegate = self;
+    _pdfController.annotationToolbarController.delegate = self;
+    _sessionStorage = [SessionStorage new];
+    
+    // Store the closeButton's target and selector in order to call it later.
+    [_sessionStorage setCloseButtonAttributes:@{@"target" : _pdfController.closeButtonItem.target,
+                                                @"action" : NSStringFromSelector(_pdfController.closeButtonItem.action)}];
+      
+    [_pdfController.closeButtonItem setTarget:self];
+    [_pdfController.closeButtonItem setAction:@selector(closeButtonPressed:)];
+    _closeButton = _pdfController.closeButtonItem;
+    
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(annotationChangedNotification:) name:PSPDFAnnotationChangedNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(annotationChangedNotification:) name:PSPDFAnnotationsAddedNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(annotationChangedNotification:) name:PSPDFAnnotationsRemovedNotification object:nil];
+
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(spreadIndexDidChange:) name:PSPDFDocumentViewControllerSpreadIndexDidChangeNotification object:nil];
+  }
+  
+  return self;
+}
+
 - (void)removeFromSuperview {
   // When the React Native `PSPDFKitView` in unmounted, we need to dismiss the `PSPDFViewController` to avoid orphan popovers.
   // See https://github.com/PSPDFKit/react-native/issues/277

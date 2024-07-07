@@ -39,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *selectedFontName;
 @property (nonatomic) BOOL showDownloadableFonts;
 
+// Custom init function
+- (instancetype)initWithFrameAndConfiguration:(CGRect)frame configuration:(PSPDFConfiguration *)configuration;
+
 /// Annotation Toolbar
 - (BOOL)enterAnnotationCreationMode;
 - (BOOL)exitCurrentlyActiveMode;
