@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RCTPSPDFKitView: UIView
 
 @property (nonatomic, readonly) PSPDFViewController *pdfController;
+@property (nonatomic, nullable) UIViewController *topController;
 @property (nonatomic) BOOL hideNavigationBar;
 @property (nonatomic, readonly) UIBarButtonItem *closeButton;
 @property (nonatomic) BOOL disableDefaultActionForTappedAnnotations;

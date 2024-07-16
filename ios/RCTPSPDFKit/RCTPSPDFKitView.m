@@ -26,7 +26,6 @@
 
 @interface RCTPSPDFKitView ()<PSPDFDocumentDelegate, PSPDFViewControllerDelegate, PSPDFFlexibleToolbarContainerDelegate>
 
-@property (nonatomic, nullable) UIViewController *topController;
 @property (nonatomic, strong) SessionStorage *sessionStorage;
 
 @end
