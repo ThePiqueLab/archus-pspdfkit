@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RCTPSPDFKitView: UIView
 
 @property (nonatomic, readonly) PSPDFViewController *pdfController;
+@property (nonatomic, copy) PSPDFTabbedViewController *tabbedViewController;
 @property (nonatomic, nullable) UIViewController *topController;
 @property (nonatomic) BOOL hideNavigationBar;
 @property (nonatomic, readonly) UIBarButtonItem *closeButton;
@@ -42,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Custom init function
 - (instancetype)initWithFrameAndConfiguration:(CGRect)frame configuration:(PSPDFConfiguration *)configuration;
+- (instancetype)initWithFrameAnd:(CGRect)frame;
 
 /// Annotation Toolbar
 - (BOOL)enterAnnotationCreationMode;

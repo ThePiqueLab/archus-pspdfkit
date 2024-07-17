@@ -85,7 +85,13 @@
 - (void)removeFromSuperview {
   // When the React Native `PSPDFKitView` in unmounted, we need to dismiss the `PSPDFViewController` to avoid orphan popovers.
   // See https://github.com/PSPDFKit/react-native/issues/277
-  [self.pdfController dismissViewControllerAnimated:NO completion:NULL];
+  if (self.tabbedViewController != nil) {
+    NSLog(@"removeFromSuperView - tabbedViewController");
+    [self.tabbedViewController dismissViewControllerAnimated:NO completion:NULL];
+  } else {
+    NSLog(@"removeFromSuperView - pdfController");
+    [self.pdfController dismissViewControllerAnimated:NO completion:NULL];
+  }
   [super removeFromSuperview];
 }
 
@@ -100,10 +106,25 @@
     return;
   }
   
-  if (self.pdfController.configuration.useParentNavigationBar || self.hideNavigationBar) {
-    self.topController = self.pdfController;
+  if (self.pdfController.configuration.useParentNavigationBar) {
+    if (self.tabbedViewController != nil) {
+      NSLog(@"didMoveToWindow - tabbedViewController");
+      self.topController = self.tabbedViewController;
+    } else {
+      NSLog(@"didMoveToWindow - pdfController");
+      self.topController = self.pdfController;
+    }
+//    self.topController = self.tabbedViewController != nil ? self.tabbedViewController : self.pdfController;
   } else {
-    self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:self.pdfController];
+    if (self.tabbedViewController != nil) {
+      NSLog(@"didMoveToWindow - tabbedViewController init");
+      self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:self.tabbedViewController];
+    } else {
+      NSLog(@"didMoveToWindow - pdfController init");
+      self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:self.pdfController];
+    }
+//    UIViewController *rootViewController = self.tabbedViewController != nil ? self.tabbedViewController : self.pdfController;
+//    self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:rootViewController];
   }
   
   UIView *topControllerView = self.topController.view;
