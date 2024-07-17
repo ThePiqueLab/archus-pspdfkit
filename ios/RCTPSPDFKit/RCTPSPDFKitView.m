@@ -19,8 +19,6 @@
 #import <PSPDFKitReactNativeiOS/PSPDFKitReactNativeiOS-Swift.h>
 #endif
 
-#import "RCTPSPDFKit-Swift.h"
-
 #define VALIDATE_DOCUMENT(document, ...) { if (!document.isValid) { NSLog(@"Document is invalid."); if (self.onDocumentLoadFailed) { self.onDocumentLoadFailed(@{@"error": @"Document is invalid."}); } return __VA_ARGS__; }}
 
 @interface RCTPSPDFKitViewController : PSPDFViewController
@@ -36,13 +34,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
   if ((self = [super initWithFrame:frame])) {
-    
-    PSPDFConfiguration *configuration = [PSPDFConfiguration configurationWithBuilder:^(PSPDFConfigurationBuilder * _Nonnull builder) {
-      [builder overrideClass:PSPDFAnnotationToolbar.class withClass:CustomAnnotationToolbar.class];
-      [builder overrideClass:PSPDFAnnotationStyleViewController.class withClass:CustomAnnotationStyleViewController.class];
-    }];
-    
-    _pdfController = [[RCTPSPDFKitViewController alloc] initWithDocument:nil configuration:configuration];
+    _pdfController = [[RCTPSPDFKitViewController alloc] init];
     _pdfController.delegate = self;
     _pdfController.annotationToolbarController.delegate = self;
     _sessionStorage = [SessionStorage new];
@@ -54,8 +46,6 @@
     [_pdfController.closeButtonItem setTarget:self];
     [_pdfController.closeButtonItem setAction:@selector(closeButtonPressed:)];
     _closeButton = _pdfController.closeButtonItem;
-    
-    _tabbedViewController = [[CustomTabbedViewController alloc] initWithPDFViewController:_pdfController];
     
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(annotationChangedNotification:) name:PSPDFAnnotationChangedNotification object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(annotationChangedNotification:) name:PSPDFAnnotationsAddedNotification object:nil];
@@ -95,8 +85,7 @@
 - (void)removeFromSuperview {
   // When the React Native `PSPDFKitView` in unmounted, we need to dismiss the `PSPDFViewController` to avoid orphan popovers.
   // See https://github.com/PSPDFKit/react-native/issues/277
-  // [self.pdfController dismissViewControllerAnimated:NO completion:NULL];
-  [self.tabbedViewController dismissViewControllerAnimated:NO completion:NULL];
+  [self.pdfController dismissViewControllerAnimated:NO completion:NULL];
   [super removeFromSuperview];
 }
 
@@ -111,12 +100,11 @@
     return;
   }
   
-//  if (self.pdfController.configuration.useParentNavigationBar || self.hideNavigationBar) {
-//    self.topController = self.pdfController;
-//  } else {
-//    self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:self.pdfController];
-//  }
-  self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:self.tabbedViewController];
+  if (self.pdfController.configuration.useParentNavigationBar || self.hideNavigationBar) {
+    self.topController = self.pdfController;
+  } else {
+    self.topController = [[PSPDFNavigationController alloc] initWithRootViewController:self.pdfController];
+  }
   
   UIView *topControllerView = self.topController.view;
   topControllerView.translatesAutoresizingMaskIntoConstraints = NO;

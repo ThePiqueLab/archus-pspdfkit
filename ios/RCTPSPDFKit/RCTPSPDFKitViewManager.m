@@ -84,49 +84,6 @@ RCT_CUSTOM_VIEW_PROPERTY(document, PSPDFDocument, RCTPSPDFKitView) {
   }
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(documents, PSPDFDocument[], CustomPdfView) {
-  if (json == nil) {
-    NSLog(@"json is nil");
-    return;
-  }
-  
-  if (![json isKindOfClass:[NSArray class]]) {
-    NSLog(@"json is not an array.");
-    return;
-  }
-  
-  NSLog(@"Converting documents... %@", json);
-  NSMutableArray *convertedDocuments = [NSMutableArray array];
-  for (NSDictionary *file in json) {
-    NSString *filePath = file[@"path"];
-    /** Converts the `fileName` to a `PSPDFDocument`. */
-    PSPDFDocument *convertedDocument = [RCTConvert PSPDFDocument:filePath remoteDocumentConfig:[self.configuration objectForKey:@"remoteDocumentConfiguration"]];
-    
-    NSString *fileName = file[@"name"];
-    convertedDocument.title = fileName;
-    
-    NSString *fileId = file[@"_id"];
-    convertedDocument.UID = fileId;
-    
-    NSLog(@"converted document %@ : %@ - %@ : %@", fileId, fileName, filePath, convertedDocument);
-    
-    /** Adds the `document` to the `documents` array. */
-    [convertedDocuments addObject:convertedDocument];
-  }
-  NSLog(@"Converted documents: %@", convertedDocuments);
-  
-  view.tabbedViewController.documents = convertedDocuments;
-  // view.pdfController.document.delegate = (id<PSPDFDocumentDelegate>)view;
-  
-  // The following properties need to be set after the document is set.
-  // We set them again here when we're certain the document exists.
-  // if (view.annotationAuthorName) {
-  //   view.pdfController.document.defaultAnnotationUsername = view.annotationAuthorName;
-  //   NSLog(@"Set the defaultAnnotationUsername to: %@", view.annotationAuthorName);
-  // }
-  // view.pdfController.pageIndex = view.pageIndex;
-}
-
 RCT_CUSTOM_VIEW_PROPERTY(pageIndex, PSPDFPageIndex, RCTPSPDFKitView) {
   if (json) {
     PSPDFPageIndex idx = [RCTConvert NSUInteger:json];
