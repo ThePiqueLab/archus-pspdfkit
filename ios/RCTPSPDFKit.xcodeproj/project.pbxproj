@@ -16,6 +16,11 @@
 		0756A13E29C2124C00D3462C /* NSExceptionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756A13A29C2124B00D3462C /* NSExceptionError.swift */; };
 		0756A13F29C2124C00D3462C /* InstantDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756A13B29C2124B00D3462C /* InstantDocumentViewController.swift */; };
 		07D79CA52A086568006E90D7 /* PspdfkitMeasurementConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D79CA42A086568006E90D7 /* PspdfkitMeasurementConvertor.swift */; };
+		44620D9D2C47A39000E977E8 /* NSUserActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44620D962C47A39000E977E8 /* NSUserActivityExtensions.swift */; };
+		44620D9E2C47A39000E977E8 /* CustomAnnotationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44620D982C47A39000E977E8 /* CustomAnnotationToolbar.swift */; };
+		44620D9F2C47A39000E977E8 /* CustomTabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44620D992C47A39000E977E8 /* CustomTabbedViewController.swift */; };
+		44620DA02C47A39000E977E8 /* LaserBrushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44620D9A2C47A39000E977E8 /* LaserBrushView.swift */; };
+		44620DA12C47A39000E977E8 /* StrokeBasedEraserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44620D9B2C47A39000E977E8 /* StrokeBasedEraserView.swift */; };
 		4856D2FD2BEC037E00EA03C6 /* PDFDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4856D2FB2BEC037E00EA03C6 /* PDFDocumentManager.m */; };
 		4856D2FE2BEC037E00EA03C6 /* PDFDocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4856D2FC2BEC037E00EA03C6 /* PDFDocumentManager.swift */; };
 		48A73FC42BD8281500BDD8FD /* AnnotationConfigurationsConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A73FC32BD8281500BDD8FD /* AnnotationConfigurationsConvertor.swift */; };
@@ -58,6 +63,11 @@
 		0756A13A29C2124B00D3462C /* NSExceptionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSExceptionError.swift; sourceTree = "<group>"; };
 		0756A13B29C2124B00D3462C /* InstantDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantDocumentViewController.swift; sourceTree = "<group>"; };
 		07D79CA42A086568006E90D7 /* PspdfkitMeasurementConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PspdfkitMeasurementConvertor.swift; sourceTree = "<group>"; };
+		44620D962C47A39000E977E8 /* NSUserActivityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserActivityExtensions.swift; sourceTree = "<group>"; };
+		44620D982C47A39000E977E8 /* CustomAnnotationToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationToolbar.swift; sourceTree = "<group>"; };
+		44620D992C47A39000E977E8 /* CustomTabbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabbedViewController.swift; sourceTree = "<group>"; };
+		44620D9A2C47A39000E977E8 /* LaserBrushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBrushView.swift; sourceTree = "<group>"; };
+		44620D9B2C47A39000E977E8 /* StrokeBasedEraserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeBasedEraserView.swift; sourceTree = "<group>"; };
 		4856D2FB2BEC037E00EA03C6 /* PDFDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFDocumentManager.m; sourceTree = "<group>"; };
 		4856D2FC2BEC037E00EA03C6 /* PDFDocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFDocumentManager.swift; sourceTree = "<group>"; };
 		48A73FC32BD8281500BDD8FD /* AnnotationConfigurationsConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationConfigurationsConvertor.swift; sourceTree = "<group>"; };
@@ -99,6 +109,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44620D972C47A39000E977E8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				44620D962C47A39000E977E8 /* NSUserActivityExtensions.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		44620D9C2C47A39000E977E8 /* CustomTools */ = {
+			isa = PBXGroup;
+			children = (
+				44620D972C47A39000E977E8 /* Categories */,
+				44620D982C47A39000E977E8 /* CustomAnnotationToolbar.swift */,
+				44620D992C47A39000E977E8 /* CustomTabbedViewController.swift */,
+				44620D9A2C47A39000E977E8 /* LaserBrushView.swift */,
+				44620D9B2C47A39000E977E8 /* StrokeBasedEraserView.swift */,
+			);
+			path = CustomTools;
+			sourceTree = "<group>";
+		};
 		48A73FD12BD834AE00BDD8FD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +140,7 @@
 		657278041D86AE7300A5E1A8 /* RCTPSPDFKit */ = {
 			isa = PBXGroup;
 			children = (
+				44620D9C2C47A39000E977E8 /* CustomTools */,
 				6540D1821D89D22E00B8F94F /* RCTPSPDFKitManager.h */,
 				0756A13929C2124B00D3462C /* InstantDocumentInfo.swift */,
 				0756A13B29C2124B00D3462C /* InstantDocumentViewController.swift */,
@@ -193,6 +224,8 @@
 			dependencies = (
 			);
 			name = RCTPSPDFKit;
+			packageProductDependencies = (
+			);
 			productName = RNPSPDFKit;
 			productReference = 657277151D8312EA00A5E1A8 /* libRCTPSPDFKit.a */;
 			productType = "com.apple.product-type.library.static";
@@ -222,6 +255,8 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,6 +276,7 @@
 				0754B44D28B43B4200431465 /* RNProcessor.m in Sources */,
 				0724CD9A2901E405003BB2A3 /* RNConfigurationHelper.swift in Sources */,
 				48A73FC82BD8283A00BDD8FD /* RCTConvert+PSPDFEditMenuAppearance.swift in Sources */,
+				44620DA02C47A39000E977E8 /* LaserBrushView.swift in Sources */,
 				0754B44928B4310E00431465 /* RNProcessor.swift in Sources */,
 				07D79CA52A086568006E90D7 /* PspdfkitMeasurementConvertor.swift in Sources */,
 				0756A13C29C2124C00D3462C /* UIColor.swift in Sources */,
@@ -251,15 +287,19 @@
 				84545BA4210A5CCF00FBB0A7 /* RCTConvert+PSPDFAnnotation.m in Sources */,
 				6540D1841D89D22E00B8F94F /* RCTPSPDFKitManager.m in Sources */,
 				84694AA822AFC7510077FD01 /* RCTConvert+UIBarButtonItem.m in Sources */,
+				44620DA12C47A39000E977E8 /* StrokeBasedEraserView.swift in Sources */,
 				48A73FDB2BDF828B00BDD8FD /* RCTConvert+PSPDFImageSaveMode.swift in Sources */,
 				0756A13E29C2124C00D3462C /* NSExceptionError.swift in Sources */,
+				44620D9D2C47A39000E977E8 /* NSUserActivityExtensions.swift in Sources */,
 				84B9870023FC208600C6711A /* RCTConvert+PSPDFAnnotationChange.m in Sources */,
 				B783BA3421C3F55300FD981A /* RCTConvert+PSPDFAnnotationToolbarConfiguration.m in Sources */,
 				F84F8B192032D54F00153D9E /* RCTPSPDFKitView.m in Sources */,
 				6572780C1D86AE7300A5E1A8 /* RCTConvert+PSPDFConfiguration.m in Sources */,
 				4856D2FE2BEC037E00EA03C6 /* PDFDocumentManager.swift in Sources */,
+				44620D9F2C47A39000E977E8 /* CustomTabbedViewController.swift in Sources */,
 				48A73FC62BD8283100BDD8FD /* RCTConvert+PSPDFAnnotationFlags.swift in Sources */,
 				48A73FC42BD8281500BDD8FD /* AnnotationConfigurationsConvertor.swift in Sources */,
+				44620D9E2C47A39000E977E8 /* CustomAnnotationToolbar.swift in Sources */,
 				4856D2FD2BEC037E00EA03C6 /* PDFDocumentManager.m in Sources */,
 				84BC2EAD229EE9FF00A386C6 /* RCTConvert+PSPDFViewMode.m in Sources */,
 			);

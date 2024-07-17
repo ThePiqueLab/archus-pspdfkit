@@ -7,6 +7,14 @@
 //  This notice may not be removed from this file.
 //
 
+#if __has_include("PSPDFKitReactNativeiOS-Swift.h")
+#import "PSPDFKitReactNativeiOS-Swift.h"
+#else
+#import <PSPDFKitReactNativeiOS/PSPDFKitReactNativeiOS-Swift.h>
+#endif
+
+#import "RCTPSPDFKit-Swift.h"
+
 #import <UIKit/UIKit.h>
 #import <React/RCTComponent.h>
 
@@ -16,6 +24,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RCTPSPDFKitView: UIView
+
+/** Custom props (start) */
+
+@property (nonatomic, copy) CustomTabbedViewController *tabbedViewController;
+
+/** Custom props (end) */
 
 @property (nonatomic, readonly) PSPDFViewController *pdfController;
 @property (nonatomic, nullable) UIViewController *topController;
